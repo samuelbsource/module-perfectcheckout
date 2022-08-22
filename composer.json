@@ -1,0 +1,22 @@
+{
+    "name": "perfectshapes/module-perfectcheckout",
+    "description": "Fixes configurable product view in checkout to show the correct image and text of the selected simple product",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Samuel Boczek",
+            "email": "samuelboczek@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "PerfectShapes\\PerfectCheckout\\": ""
+        }
+    }
+}

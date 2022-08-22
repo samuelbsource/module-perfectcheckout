@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="PerfectShapes\PerfectCheckout\Api\Data\TotalsItemChildInterface"
+                type="PerfectShapes\PerfectCheckout\Model\Data\TotalsItemChild" />
+	<type name="Magento\Checkout\CustomerData\ItemPoolInterface">
+        <arguments>
+            <argument name="itemMap" xsi:type="array">
+                <item name="configurable" xsi:type="string">PerfectShapes\PerfectCheckout\Model\CustomerData\ConfigurableItem</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Item">
+		<plugin name="PerfectShapes_PerfectCheckout_Quote_Item_Plugin" type="PerfectShapes\PerfectCheckout\Plugin\Quote\Item" sortOrder="99" disabled="false"/>
+	</type>
+    <type name="Magento\Quote\Model\Cart\CartTotalRepository">
+        <plugin name="PerfectShapes_PerfectCheckout_CartTotalRepository_Plugin" type="PerfectShapes\PerfectCheckout\Plugin\CartTotalRepository" />
+    </type>
+    <type name="Magento\Checkout\Model\Cart\ImageProvider">
+		<plugin name="PerfectShapes_PerfectCheckout_Cart_ImageProvider" type="PerfectShapes\PerfectCheckout\Plugin\Cart\ImageProvider" sortOrder="99" disabled="false"/>
+	</type>
+    <type name="Magento\Checkout\Block\Cart\Item\Renderer">
+		<plugin name="PerfectShapes_PerfectCheckout_Item_Renderer" type="PerfectShapes\PerfectCheckout\Plugin\ItemRenderer" sortOrder="10" disabled="false"/>
+	</type>
+</config>
